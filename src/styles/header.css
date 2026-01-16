@@ -1,9 +1,17 @@
 header {
   border-bottom: 1px solid black;
-  cursor: pointer;
 }
 
 .header-logo {
   width: 30px;
   height: 30px;
+}
+
+.menu-label:hover {
+  background: black;
+  color: white;
+}
+
+.logo-hover {
+  background: black;
 }
