@@ -5,8 +5,8 @@ import TimeDisplay from "./TimeDisplay";
 const MENU_ITEMS = ["Finder", "File", "Edit", "Go", "Help"];
 function Header() {
   return (
-    <header className="flex justify-between">
-      <ul className="flex gap-4">
+    <header className="flex justify-between items-center px-4">
+      <ul className="flex gap-4 items-center">
         <li>
           <img className="header-logo" src={giddyOSLogo} />
         </li>

@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
+import { DATE_FORMAT_OPTIONS, LANG } from "../constants";
 
 function TimeDisplay() {
-  const [time, setTime] = useState(new Date());
+  const [dateTime, setDateTime] = useState(new Date());
 
   useEffect(() => {
     const timeId = setInterval(() => {
-      setTime(new Date());
+      setDateTime(new Date());
     }, 1000);
     return () => clearInterval(timeId);
   }, []);
 
   return (
     <div>
-      <div>{time.toLocaleTimeString()}</div>
+      <div>
+        {new Intl.DateTimeFormat(LANG, DATE_FORMAT_OPTIONS).format(dateTime)}
+      </div>
     </div>
   );
 }
