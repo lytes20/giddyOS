@@ -2,7 +2,7 @@
 import "../styles/header.css";
 import giddyOSLogo from "../assets/img/giddyOSLogo.png";
 import TimeDisplay from "./TimeDisplay";
-import Dropdown from "./Dropdowns";
+import Dropdown from "./Dropdown";
 import Menu from "./Menu";
 import { MENUS, OS_MENU } from "../menus/menu.data";
 
