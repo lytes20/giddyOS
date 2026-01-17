@@ -12,3 +12,12 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.dropdown-menu-item{
+  width: 100%;
+  text-align: left;
+}
+.dropdown-menu-item:hover{
+  background-color: black;
+  color: white;
+  
+}

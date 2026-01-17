@@ -1,8 +1,10 @@
 # giddyOS
 
-## Tech used
+## Tech Stack
 
 - React
 - Vite
 - Typescript
 - Tailwind
+- Zustand
+
