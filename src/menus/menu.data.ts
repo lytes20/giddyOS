@@ -6,7 +6,7 @@ export const OS_MENU_ACTIONS = {
 }
 export const OS_MENU = [
   {name: "About This Computer", action: OS_MENU_ACTIONS.SHOW_COMPUTER_INFO},
-  {name: "System Preferences"},
+  {name: "System Preferences..."},
   {name: "Giddy Store"},
   {name: "Recent Items"},
   {name: "Create Account"},

@@ -1,8 +1,19 @@
 @import "tailwindcss";
-
-main {
-  width: 100%;
+html {
+  height: 100%;
+  box-sizing: border-box;
 }
+
+body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 
 dialog {
   position: absolute;
@@ -22,3 +33,4 @@ dialog::backdrop {
     rgba(255, 0, 0, 0.3) 20px
   );
 }
+
