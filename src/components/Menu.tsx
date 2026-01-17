@@ -1,13 +1,19 @@
+import { MenuItem } from "../menus/menu.types";
+
 interface MenuProps {
-  items: string[];
+  items: MenuItem[];
+  handleMenuClick: (action: string) => {}
 }
 
-function Menu({ items }: MenuProps) {
+function Menu({ items, handleMenuClick }: MenuProps) {
+
   return (
-    <ul className="finder-menu">
-      {items.map((item) => (
-        <li key={item} className="border-b px-2">
-          {item}
+    <ul className="">
+      {items.map(({ name, action }) => (
+        <li key={name} className="border-b px-2">
+          <button onClick={() => handleMenuClick(action)}>
+            {name}
+          </button>
         </li>
       ))}
     </ul>

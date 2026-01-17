@@ -1,15 +1,30 @@
 // Header.tsx
-import { useState } from "react";
+import { act, useState } from "react";
 import "../styles/header.css";
-import giddyOSLogoBlack from "../assets/img/giddyOSLogoBlack.png";
-import giddyOSLogoWhite from "../assets/img/giddyOSLogoWhite.png";
+import giddyOSLogoBlack from "../assets/images/giddyOSLogoBlack.png";
+import giddyOSLogoWhite from "../assets/images/giddyOSLogoWhite.png";
 import TimeDisplay from "./TimeDisplay";
 import Dropdown from "./Dropdown";
 import Menu from "./Menu";
-import { MENUS, OS_MENU } from "../menus/menu.data";
+import { MENUS, OS_MENU, OS_MENU_ACTIONS } from "../menus/menu.data";
+import useBear from "../actions/osActions";
 
 function Header() {
   const [isLogoHovered, setIsLogoHovered] = useState(false);
+
+  const openComputerInfo = useBear((state) => state.openComputerInfo);
+
+  const handleMenuClick = (action: string) => {
+    switch (action) {
+      case OS_MENU_ACTIONS.SHOW_COMPUTER_INFO:
+        openComputerInfo();
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <header className="flex justify-between items-center px-4">
       <nav aria-label="Main menu">
@@ -28,7 +43,9 @@ function Header() {
                   className="header-logo"
                 />
               }
-              content={<Menu items={OS_MENU} />}
+              content={
+                <Menu items={OS_MENU} handleMenuClick={handleMenuClick} />
+              }
             />
           </li>
 
