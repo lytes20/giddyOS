@@ -1,10 +1,13 @@
 import useBear from "../actions/osActions";
+import DesktopIcon from "./DesktopIcon";
 import Dialog from "./Dialog";
+import giddyDiskIcon from "../assets/icons/disk-icon.png"
+
 
 const SYSTEM_APPS = [
-  { name: "giddyDisk", icon: "" },
-  { name: "giddyPod", icon: "" },
-  { name: "Giddy Store", icon: "" }
+  { name: "giddyDisk", icon: giddyDiskIcon },
+  { name: "giddyPod", icon: giddyDiskIcon },
+  { name: "Giddy Store", icon: giddyDiskIcon }
 ]
 function Main() {
   const open = useBear((state) => state.open);
@@ -13,7 +16,10 @@ function Main() {
   return (
     <main>
       {SYSTEM_APPS.map((systemApp) => {
-        return <div>{systemApp.name}</div>
+
+        return <div className="w-fit mb-2">
+          <DesktopIcon key={systemApp.name} systemApp={systemApp} />
+        </div>
       })}
       <Dialog open={open} closeDialog={() => closeComputerInfo()} />
     </main>
