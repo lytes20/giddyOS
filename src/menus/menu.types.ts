@@ -6,5 +6,5 @@ export interface MenuItem {
 }
 export interface Menu {
   label: string;
-  items: MenuItem [];
+  items: MenuItem[];
 }

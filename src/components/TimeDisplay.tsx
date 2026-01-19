@@ -18,7 +18,7 @@ function TimeDisplay({ tickMs = 1000 }: TimeDisplayProps) {
 
   const formatter = useMemo(
     () => new Intl.DateTimeFormat(LANG, DATE_FORMAT_OPTIONS),
-    []
+    [],
   );
 
   return <time dateTime={now.toISOString()}>{formatter.format(now)}</time>;
