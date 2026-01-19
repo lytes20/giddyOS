@@ -15,7 +15,7 @@ function Main() {
   const closeComputerInfo = useBear((state) => state.closeComputerInfo);
 
   return (
-    <main>
+    <main className="p-4">
       {SYSTEM_APPS.map((systemApp) => {
         return (
           <div className="w-fit mb-2">
