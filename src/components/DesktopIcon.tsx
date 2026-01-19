@@ -4,13 +4,17 @@ interface ISystemApp {
 }
 interface DesktopIconProps {
   systemApp: ISystemApp;
+  onDoubleClick?: () => void;
 }
 
 function DesktopIcon(props: DesktopIconProps) {
-  const { systemApp } = props;
+  const { systemApp, onDoubleClick } = props;
   const { icon, name } = systemApp;
   return (
-    <div className="flex flex-col items-center w-fit">
+    <div
+      className="flex flex-col items-center w-fit cursor-pointer"
+      onDoubleClick={onDoubleClick}
+    >
       <div className="w-[100px]">
         <img src={icon} className="w-full" />
       </div>

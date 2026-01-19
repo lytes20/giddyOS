@@ -1,0 +1,31 @@
+/* Disk Explorer specific styles */
+
+.disk-explorer-window {
+  min-width: 500px;
+  min-height: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.disk-explorer-search {
+  position: relative;
+}
+
+.disk-explorer-search input:focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.directory-item {
+  transition: all 0.2s ease;
+}
+
+.directory-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.directory-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
