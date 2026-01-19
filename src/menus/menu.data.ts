@@ -10,7 +10,7 @@ export const OS_MENU = [
   {name: "Giddy Store"},
   {name: "Recent Items"},
   {name: "Create Account"},
-  {name: "Login"},
+  {name: "Logout"},
 ];
 
 export const MENUS: Menu[] = [
