@@ -19,7 +19,7 @@ function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="flex flex-col items-center space-y-6">
-        <div className="w-[100px] h-[100px] rounded-full overflow-hidden border-2 border-gray-300">
+        <div className="w-[100px] h-[100px] rounded-full overflow-hidden border border-black">
           <img
             src={anonymous}
             alt="User Avatar"
@@ -32,7 +32,7 @@ function Login() {
           onChange={handlePasswordChange}
           onKeyDown={handleKeyDown}
           placeholder="Enter Password"
-          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent text-center"
+          className="px-2 py-1 border border-black rounded-xl focus:outline-none focus:ring focus:ring-black focus:border-transparent text-center"
           autoFocus
         />
       </div>
