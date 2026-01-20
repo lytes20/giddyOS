@@ -8,16 +8,27 @@ import Dropdown from "../ui/Dropdown";
 import Menu from "../ui/Menu";
 import { MENUS, OS_MENU, OS_MENU_ACTIONS } from "../../menus/menu.data";
 import useBear from "../../stores/osActions";
+import useAuthStore from "../../stores/login";
 
 function Header() {
   const [isLogoHovered, setIsLogoHovered] = useState(false);
 
   const openComputerInfo = useBear((state) => state.openComputerInfo);
+  const logout = useAuthStore((state) => state.logout);
+
+  function handleLogout() {
+    localStorage.removeItem("isLoggedIn");
+    logout();
+  }
 
   const handleMenuClick = (action: string) => {
     switch (action) {
       case OS_MENU_ACTIONS.SHOW_COMPUTER_INFO:
         openComputerInfo();
+        break;
+
+      case OS_MENU_ACTIONS.LOGOUT:
+        handleLogout();
         break;
 
       default:
@@ -54,7 +65,9 @@ function Header() {
             <li key={menu.label}>
               <Dropdown
                 trigger={<span className="p-1 menu-label">{menu.label}</span>}
-                content={<Menu items={menu.items} />}
+                content={
+                  <Menu items={menu.items} handleMenuClick={handleMenuClick} />
+                }
               />
             </li>
           ))}

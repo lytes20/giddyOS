@@ -3,6 +3,7 @@ import { Menu } from "../types/menu.types";
 
 export const OS_MENU_ACTIONS = {
   SHOW_COMPUTER_INFO: "SHOW_COMPUTER_INFO",
+  LOGOUT: "LOGOUT",
 };
 export const OS_MENU = [
   { name: "About This Computer", action: OS_MENU_ACTIONS.SHOW_COMPUTER_INFO },
@@ -10,7 +11,7 @@ export const OS_MENU = [
   { name: "Giddy Store" },
   { name: "Recent Items" },
   { name: "Create Account" },
-  { name: "Logout" },
+  { name: "Logout", action: OS_MENU_ACTIONS.LOGOUT },
 ];
 
 export const MENUS: Menu[] = [
