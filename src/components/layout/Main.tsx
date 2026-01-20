@@ -5,18 +5,45 @@ import DiskExplorer from "../ui/DiskExplorer";
 import giddyDiskIcon from "../../assets/icons/giddyDisk.png";
 import giddyPodIcon from "../../assets/icons/giddyPod.png";
 import giddyStoreIcon from "../../assets/icons/giddy-store.png";
+import MusicPlayer from "../ui/MusicPlayer";
+import useMusic from "../../stores/music";
+
+const SYSTEM_APP_NAMES = {
+  GIDDY_DISK: "giddyDisk",
+  GIDDY_POD: "giddyPod",
+  GIDDY_STORE: "giddyStore",
+};
 
 const SYSTEM_APPS = [
-  { name: "giddyDisk", icon: giddyDiskIcon },
-  { name: "giddyPod", icon: giddyPodIcon },
-  { name: "Giddy Store", icon: giddyStoreIcon },
+  { name: SYSTEM_APP_NAMES.GIDDY_DISK, icon: giddyDiskIcon },
+  { name: SYSTEM_APP_NAMES.GIDDY_POD, icon: giddyPodIcon },
+  { name: SYSTEM_APP_NAMES.GIDDY_STORE, icon: giddyStoreIcon },
 ];
+
 function Main() {
   const open = useBear((state) => state.open);
   const diskExplorerOpen = useBear((state) => state.diskExplorerOpen);
   const closeComputerInfo = useBear((state) => state.closeComputerInfo);
   const closeDiskExplorer = useBear((state) => state.closeDiskExplorer);
   const openDiskExplorer = useBear((state) => state.openDiskExplorer);
+
+  const isMusicPlayerOpen = useMusic((state) => state.open);
+  const openMusicPlayer = useMusic((state) => state.openMusicPlayer);
+  const closeMusicPlayer = useMusic((state) => state.closeMusicPlayer);
+
+  function handleDoubleClick(appName: string) {
+    switch (appName) {
+      case SYSTEM_APP_NAMES.GIDDY_DISK:
+        openDiskExplorer();
+        break;
+      case SYSTEM_APP_NAMES.GIDDY_POD:
+        openMusicPlayer();
+        break;
+
+      default:
+        break;
+    }
+  }
 
   return (
     <main className="p-4">
@@ -26,13 +53,20 @@ function Main() {
             <DesktopIcon
               key={systemApp.name}
               systemApp={systemApp}
-              onDoubleClick={systemApp.name === "giddyDisk" ? openDiskExplorer : undefined}
+              onDoubleClick={() => handleDoubleClick(systemApp.name)}
             />
           </div>
         );
       })}
       <Dialog open={open} closeDialog={() => closeComputerInfo()} />
-      <DiskExplorer open={diskExplorerOpen} closeDialog={() => closeDiskExplorer()} />
+      <DiskExplorer
+        open={diskExplorerOpen}
+        closeDialog={() => closeDiskExplorer()}
+      />
+      <MusicPlayer
+        open={isMusicPlayerOpen}
+        closeDialog={() => closeMusicPlayer()}
+      />
     </main>
   );
 }
