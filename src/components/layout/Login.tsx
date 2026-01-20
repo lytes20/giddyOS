@@ -1,10 +1,10 @@
 import { useState } from "react";
 import anonymous from "../../assets/images/anonymous.jpg";
-import useLogin from "../../stores/login";
+import useAuthStore from "../../stores/login";
 
 function Login() {
   const [password, setPassword] = useState("");
-  const { login } = useLogin();
+  const { login } = useAuthStore();
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
@@ -12,6 +12,7 @@ function Login() {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && password.trim()) {
+      localStorage.setItem("isLoggedIn", "true");
       login();
     }
   };

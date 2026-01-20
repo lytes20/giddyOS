@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import useLogin from "../../stores/login";
+import useAuthStore from "../../stores/login";
 import Login from "./Login";
 
 interface AuthGateProps {
@@ -8,7 +8,7 @@ interface AuthGateProps {
 
 function AuthGate(props: AuthGateProps) {
   const { children } = props;
-  const isLoggedIn = useLogin((state) => state.isLoggedIn);
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   if (!isLoggedIn) {
     return <Login />;
   }
