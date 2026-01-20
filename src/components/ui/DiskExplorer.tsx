@@ -1,6 +1,6 @@
 import { useState } from "react";
 import WindowControlButton from "./WindowControlButton";
-import "../styles/disk-explorer.css";
+import "../../styles/disk-explorer.css";
 
 interface DiskExplorerProps {
   open: boolean;

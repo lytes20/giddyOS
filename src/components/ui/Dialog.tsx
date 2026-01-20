@@ -1,4 +1,4 @@
-import giddyOSLogo from "../assets/images/giddyOSLogoBlack.png";
+import giddyOSLogo from "../../assets/images/giddyOSLogoBlack.png";
 import WindowControlButton from "./WindowControlButton";
 interface DialogProps {
   open: boolean;
@@ -12,8 +12,8 @@ function Dialog(props: DialogProps) {
       <div className="flex border-b">
         <div className="flex items-center gap-1 px-1">
           <WindowControlButton char="x" handleClick={closeDialog} />
-          <WindowControlButton char="-" handleClick={() => {}} />
-          <WindowControlButton char="□" handleClick={() => {}} />
+          <WindowControlButton char="-" handleClick={() => { }} />
+          <WindowControlButton char="□" handleClick={() => { }} />
         </div>
         <div className="w-full">About this computer</div>
       </div>

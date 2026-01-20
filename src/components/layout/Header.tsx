@@ -1,13 +1,13 @@
 // Header.tsx
-import { act, useState } from "react";
-import "../styles/header.css";
-import giddyOSLogoBlack from "../assets/images/giddyOSLogoBlack.png";
-import giddyOSLogoWhite from "../assets/images/giddyOSLogoWhite.png";
-import TimeDisplay from "./TimeDisplay";
-import Dropdown from "./Dropdown";
-import Menu from "./Menu";
-import { MENUS, OS_MENU, OS_MENU_ACTIONS } from "../menus/menu.data";
-import useBear from "../actions/osActions";
+import { useState } from "react";
+import "../../styles/header.css";
+import giddyOSLogoBlack from "../../assets/images/giddyOSLogoBlack.png";
+import giddyOSLogoWhite from "../../assets/images/giddyOSLogoWhite.png";
+import TimeDisplay from "../ui/TimeDisplay";
+import Dropdown from "../ui/Dropdown";
+import Menu from "../ui/Menu";
+import { MENUS, OS_MENU, OS_MENU_ACTIONS } from "../../menus/menu.data";
+import useBear from "../../stores/osActions";
 
 function Header() {
   const [isLogoHovered, setIsLogoHovered] = useState(false);

@@ -1,10 +1,10 @@
-import useBear from "../actions/osActions";
-import DesktopIcon from "./DesktopIcon";
-import Dialog from "./Dialog";
-import DiskExplorer from "./DiskExplorer";
-import giddyDiskIcon from "../assets/icons/giddyDisk.png";
-import giddyPodIcon from "../assets/icons/giddyPod.png";
-import giddyStoreIcon from "../assets/icons/giddy-store.png";
+import useBear from "../../stores/osActions";
+import DesktopIcon from "../ui/DesktopIcon";
+import Dialog from "../ui/Dialog";
+import DiskExplorer from "../ui/DiskExplorer";
+import giddyDiskIcon from "../../assets/icons/giddyDisk.png";
+import giddyPodIcon from "../../assets/icons/giddyPod.png";
+import giddyStoreIcon from "../../assets/icons/giddy-store.png";
 
 const SYSTEM_APPS = [
   { name: "giddyDisk", icon: giddyDiskIcon },

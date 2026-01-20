@@ -1,6 +1,6 @@
 // Dropdown.tsx
 import { ReactNode } from "react";
-import "../styles/dropdown.css";
+import "../../styles/dropdown.css";
 
 interface DropdownProps {
   /** Element that triggers the dropdown (text, icon, logo, etc.) */

@@ -1,5 +1,5 @@
 // menu.data.ts
-import { Menu } from "./menu.types";
+import { Menu } from "../types/menu.types";
 
 export const OS_MENU_ACTIONS = {
   SHOW_COMPUTER_INFO: "SHOW_COMPUTER_INFO",

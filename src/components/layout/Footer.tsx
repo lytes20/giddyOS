@@ -1,8 +1,8 @@
-import "../styles/footer.css";
-import finderIcon from "../assets/icons/finder.png";
-import chatIcon from "../assets/icons/chat.png";
-import browserIcon from "../assets/icons/browser.png";
-import trashIcon from "../assets/icons/trash.png"
+import "../../styles/footer.css";
+import finderIcon from "../../assets/icons/finder.png";
+import chatIcon from "../../assets/icons/chat.png";
+import browserIcon from "../../assets/icons/browser.png";
+import trashIcon from "../../assets/icons/trash.png"
 
 const FOOTER_APPS = [
   { name: "Finder", icon: finderIcon },

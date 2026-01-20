@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { DATE_FORMAT_OPTIONS, LANG } from "../constants";
+import { DATE_FORMAT_OPTIONS, LANG } from "../../constants";
 
 interface TimeDisplayProps {
   tickMs?: number;
