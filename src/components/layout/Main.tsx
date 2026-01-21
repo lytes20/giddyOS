@@ -2,6 +2,7 @@ import useBear from "../../stores/osActions";
 import DesktopIcon from "../ui/DesktopIcon";
 import Dialog from "../ui/Dialog";
 import DiskExplorer from "../ui/DiskExplorer";
+import GiddyStore from "../ui/GiddyStore";
 import giddyDiskIcon from "../../assets/icons/giddyDisk.png";
 import giddyPodIcon from "../../assets/icons/giddyPod.png";
 import giddyStoreIcon from "../../assets/icons/giddy-store.png";
@@ -23,9 +24,12 @@ const SYSTEM_APPS = [
 function Main() {
   const open = useBear((state) => state.open);
   const diskExplorerOpen = useBear((state) => state.diskExplorerOpen);
+  const giddyStoreOpen = useBear((state) => state.giddyStoreOpen);
   const closeComputerInfo = useBear((state) => state.closeComputerInfo);
   const closeDiskExplorer = useBear((state) => state.closeDiskExplorer);
   const openDiskExplorer = useBear((state) => state.openDiskExplorer);
+  const closeGiddyStore = useBear((state) => state.closeGiddyStore);
+  const openGiddyStore = useBear((state) => state.openGiddyStore);
 
   const isMusicPlayerOpen = useMusic((state) => state.open);
   const openMusicPlayer = useMusic((state) => state.openMusicPlayer);
@@ -38,6 +42,9 @@ function Main() {
         break;
       case SYSTEM_APP_NAMES.GIDDY_POD:
         openMusicPlayer();
+        break;
+      case SYSTEM_APP_NAMES.GIDDY_STORE:
+        openGiddyStore();
         break;
 
       default:
@@ -63,6 +70,7 @@ function Main() {
         open={diskExplorerOpen}
         closeDialog={() => closeDiskExplorer()}
       />
+      <GiddyStore open={giddyStoreOpen} closeDialog={() => closeGiddyStore()} />
       <MusicPlayer
         open={isMusicPlayerOpen}
         closeDialog={() => closeMusicPlayer()}
