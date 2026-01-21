@@ -5,7 +5,7 @@ import DiskExplorer from "../ui/DiskExplorer";
 import giddyDiskIcon from "../../assets/icons/giddyDisk.png";
 import giddyPodIcon from "../../assets/icons/giddyPod.png";
 import giddyStoreIcon from "../../assets/icons/giddy-store.png";
-import MusicPlayer from "../ui/MusicPlayer";
+import MusicPlayer from "../ui/music/MusicPlayer";
 import useMusic from "../../stores/music";
 
 const SYSTEM_APP_NAMES = {
