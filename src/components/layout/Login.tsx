@@ -12,7 +12,6 @@ function Login() {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && password.trim()) {
-      localStorage.setItem("isLoggedIn", "true");
       login();
     }
   };

@@ -17,7 +17,6 @@ function Header() {
   const logout = useAuthStore((state) => state.logout);
 
   function handleLogout() {
-    localStorage.removeItem("isLoggedIn");
     logout();
   }
 
