@@ -1,0 +1,33 @@
+.context-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.context-menu {
+  position: absolute;
+  min-width: 120px;
+  background-color: white;
+  border: 1px solid black;
+  z-index: 1001;
+}
+
+.context-menu-item {
+  width: 100%;
+  padding: 4px 8px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.context-menu-item:hover,
+.context-menu-item:focus {
+  background-color: black;
+  color: white;
+  outline: none;
+}

@@ -3,6 +3,7 @@ import DesktopIcon from "../ui/DesktopIcon";
 import Dialog from "../ui/Dialog";
 import DiskExplorer from "../ui/DiskExplorer";
 import GiddyStore from "../ui/GiddyStore";
+import ContextMenu from "../ui/ContextMenu";
 import giddyDiskIcon from "../../assets/icons/giddyDisk.png";
 import giddyPodIcon from "../../assets/icons/giddyPod.png";
 import giddyStoreIcon from "../../assets/icons/giddy-store.png";
@@ -25,11 +26,15 @@ function Main() {
   const open = useBear((state) => state.open);
   const diskExplorerOpen = useBear((state) => state.diskExplorerOpen);
   const giddyStoreOpen = useBear((state) => state.giddyStoreOpen);
+  const contextMenuVisible = useBear((state) => state.contextMenuVisible);
+  const contextMenuPosition = useBear((state) => state.contextMenuPosition);
+  const selectedApp = useBear((state) => state.selectedApp);
   const closeComputerInfo = useBear((state) => state.closeComputerInfo);
   const closeDiskExplorer = useBear((state) => state.closeDiskExplorer);
   const openDiskExplorer = useBear((state) => state.openDiskExplorer);
   const closeGiddyStore = useBear((state) => state.closeGiddyStore);
   const openGiddyStore = useBear((state) => state.openGiddyStore);
+  const hideContextMenu = useBear((state) => state.hideContextMenu);
 
   const isMusicPlayerOpen = useMusic((state) => state.open);
   const openMusicPlayer = useMusic((state) => state.openMusicPlayer);
@@ -49,6 +54,12 @@ function Main() {
 
       default:
         break;
+    }
+  }
+
+  function handleContextMenuOpen() {
+    if (selectedApp) {
+      handleDoubleClick(selectedApp);
     }
   }
 
@@ -74,6 +85,12 @@ function Main() {
       <MusicPlayer
         open={isMusicPlayerOpen}
         closeDialog={() => closeMusicPlayer()}
+      />
+      <ContextMenu
+        isVisible={contextMenuVisible}
+        position={contextMenuPosition}
+        onClose={hideContextMenu}
+        onOpen={handleContextMenuOpen}
       />
     </main>
   );

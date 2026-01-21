@@ -1,4 +1,5 @@
 import React from "react";
+import useBear from "../../stores/osActions";
 
 interface ISystemApp {
   name: string;
@@ -13,6 +14,7 @@ function DesktopIcon(props: DesktopIconProps) {
   const { systemApp, onDoubleClick } = props;
   const { icon, name } = systemApp;
   const [isFocused, setIsFocused] = React.useState(false);
+  const showContextMenu = useBear((state) => state.showContextMenu);
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -30,6 +32,14 @@ function DesktopIcon(props: DesktopIconProps) {
     onDoubleClick?.();
   };
 
+  const handleRightClick = (event: React.MouseEvent) => {
+    event.preventDefault(); // Prevent the default browser context menu
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX;
+    const y = event.clientY;
+    showContextMenu(name, { x, y });
+  };
+
   return (
     <div
       className="flex flex-col items-center w-fit cursor-pointer focus:outline-none"
@@ -38,6 +48,7 @@ function DesktopIcon(props: DesktopIconProps) {
       onBlur={handleBlur}
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
+      onContextMenu={handleRightClick}
     >
       <div className="w-[100px]">
         <img src={icon} className="w-full" />
