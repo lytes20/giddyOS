@@ -5,6 +5,7 @@ import DiskExplorer from "../ui/DiskExplorer";
 import GiddyStore from "../ui/GiddyStore";
 import Chat from "../ui/chat";
 import Trash from "../ui/Trash";
+import Browser from "../ui/Browser";
 import ContextMenu from "../ui/ContextMenu";
 import giddyDiskIcon from "../../assets/icons/giddyDisk.png";
 import giddyPodIcon from "../../assets/icons/giddyPod.png";
@@ -30,6 +31,7 @@ function Main() {
   const giddyStoreOpen = useBear((state) => state.giddyStoreOpen);
   const chatOpen = useBear((state) => state.chatOpen);
   const trashOpen = useBear((state) => state.trashOpen);
+  const browserOpen = useBear((state) => state.browserOpen);
   const contextMenuVisible = useBear((state) => state.contextMenuVisible);
   const contextMenuPosition = useBear((state) => state.contextMenuPosition);
   const selectedApp = useBear((state) => state.selectedApp);
@@ -40,6 +42,7 @@ function Main() {
   const openGiddyStore = useBear((state) => state.openGiddyStore);
   const closeChat = useBear((state) => state.closeChat);
   const closeTrash = useBear((state) => state.closeTrash);
+  const closeBrowser = useBear((state) => state.closeBrowser);
   const hideContextMenu = useBear((state) => state.hideContextMenu);
 
   const isMusicPlayerOpen = useMusic((state) => state.open);
@@ -89,6 +92,7 @@ function Main() {
       />
       <GiddyStore open={giddyStoreOpen} closeDialog={() => closeGiddyStore()} />
       <Chat open={chatOpen} closeDialog={() => closeChat()} />
+      <Browser open={browserOpen} closeDialog={() => closeBrowser()} />
       <Trash open={trashOpen} closeDialog={() => closeTrash()} />
       <MusicPlayer
         open={isMusicPlayerOpen}

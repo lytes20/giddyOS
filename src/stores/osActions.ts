@@ -6,6 +6,7 @@ interface OSState {
   giddyStoreOpen: boolean;
   chatOpen: boolean;
   trashOpen: boolean;
+  browserOpen: boolean;
   contextMenuVisible: boolean;
   contextMenuPosition: { x: number; y: number };
   selectedApp: string | null;
@@ -19,6 +20,8 @@ interface OSState {
   openChat: () => void;
   closeTrash: () => void;
   openTrash: () => void;
+  closeBrowser: () => void;
+  openBrowser: () => void;
   showContextMenu: (
     appName: string,
     position: { x: number; y: number }
@@ -32,6 +35,7 @@ const useBear = create<OSState>((set) => ({
   giddyStoreOpen: false,
   chatOpen: false,
   trashOpen: false,
+  browserOpen: false,
   contextMenuVisible: false,
   contextMenuPosition: { x: 0, y: 0 },
   selectedApp: null,
@@ -45,6 +49,8 @@ const useBear = create<OSState>((set) => ({
   openChat: () => set({ chatOpen: true }),
   closeTrash: () => set({ trashOpen: false }),
   openTrash: () => set({ trashOpen: true }),
+  closeBrowser: () => set({ browserOpen: false }),
+  openBrowser: () => set({ browserOpen: true }),
   showContextMenu: (appName: string, position: { x: number; y: number }) =>
     set({
       contextMenuVisible: true,
