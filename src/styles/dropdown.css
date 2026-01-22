@@ -20,3 +20,13 @@
   background-color: black;
   color: white;
 }
+
+.dropdown-menu-item:disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+
+.dropdown-menu-item:disabled:hover {
+  background-color: transparent;
+  color: #999;
+}

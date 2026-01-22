@@ -2,7 +2,7 @@ import { MenuItem } from "../../types/menu.types";
 
 interface MenuProps {
   items: MenuItem[];
-  handleMenuClick: (action: string) => {};
+  handleMenuClick: (action: string | undefined) => void;
 }
 
 function Menu({ items, handleMenuClick }: MenuProps) {
@@ -13,6 +13,7 @@ function Menu({ items, handleMenuClick }: MenuProps) {
           <button
             className="dropdown-menu-item px-2"
             onClick={() => handleMenuClick(action)}
+            disabled={!action}
           >
             {name}
           </button>

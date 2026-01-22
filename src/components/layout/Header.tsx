@@ -20,7 +20,10 @@ function Header() {
     logout();
   }
 
-  const handleMenuClick = (action: string) => {
+  const handleMenuClick = (action: string | undefined) => {
+    if (!action) {
+      return;
+    }
     switch (action) {
       case OS_MENU_ACTIONS.SHOW_COMPUTER_INFO:
         openComputerInfo();
