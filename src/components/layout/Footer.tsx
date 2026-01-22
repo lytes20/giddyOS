@@ -21,6 +21,7 @@ const FOOTER_APPS = [
 function Footer() {
   const openDiskExplorer = useBear((state) => state.openDiskExplorer);
   const openChat = useBear((state) => state.openChat);
+  const openTrash = useBear((state) => state.openTrash);
 
   function handleDockIconClick(appName: string) {
     switch (appName) {
@@ -29,6 +30,9 @@ function Footer() {
         break;
       case FOOTER_APP_NAMES.CHAT:
         openChat();
+        break;
+      case FOOTER_APP_NAMES.TRASH:
+        openTrash();
         break;
       default:
         break;
