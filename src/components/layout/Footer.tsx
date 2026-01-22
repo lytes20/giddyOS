@@ -20,11 +20,15 @@ const FOOTER_APPS = [
 
 function Footer() {
   const openDiskExplorer = useBear((state) => state.openDiskExplorer);
+  const openChat = useBear((state) => state.openChat);
 
   function handleDockIconClick(appName: string) {
     switch (appName) {
       case FOOTER_APP_NAMES.FINDER:
         openDiskExplorer();
+        break;
+      case FOOTER_APP_NAMES.CHAT:
+        openChat();
         break;
       default:
         break;
