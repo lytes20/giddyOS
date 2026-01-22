@@ -7,19 +7,13 @@ interface DiskExplorerProps {
   closeDialog: () => void;
 }
 
-const DIRECTORIES = [
-  "Applications",
-  "Images",
-  "Music",
-  "Desktop",
-  "Documents"
-];
+const DIRECTORIES = ["Applications", "Images", "Music", "Desktop", "Documents"];
 
 function DiskExplorer(props: DiskExplorerProps) {
   const { open, closeDialog } = props;
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredDirectories = DIRECTORIES.filter(dir =>
+  const filteredDirectories = DIRECTORIES.filter((dir) =>
     dir.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -30,8 +24,8 @@ function DiskExplorer(props: DiskExplorerProps) {
       <div className="flex border-b">
         <div className="flex items-center gap-1 px-1">
           <WindowControlButton char="x" handleClick={closeDialog} />
-          <WindowControlButton char="-" handleClick={() => { }} />
-          <WindowControlButton char="□" handleClick={() => { }} />
+          <WindowControlButton char="-" handleClick={() => {}} />
+          <WindowControlButton char="□" handleClick={() => {}} />
         </div>
         <div className="w-full text-center">giddyDisk</div>
       </div>
