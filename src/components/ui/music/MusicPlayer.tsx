@@ -83,7 +83,7 @@ function MusicPlayer({ open, closeDialog }: MusicPlayerProps) {
   }
 
   return (
-    <div className="fixed left-4 top-16 h-[600px] bg-white border border-black z-50">
+    <div className="fixed left-4 top-16 h-[600px] bg-white border border-black rounded-lg z-50">
       <div className="flex border-b">
         <div className="flex items-center gap-1 px-1">
           <WindowControlButton char="x" handleClick={closeDialog} />

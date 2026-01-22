@@ -26,7 +26,7 @@ function DiskExplorer(props: DiskExplorerProps) {
   if (!open) return null;
 
   return (
-    <div className="disk-explorer-window fixed left-4 top-16 w-[600px] h-[600px] bg-white border border-black z-50">
+    <div className="disk-explorer-window fixed left-4 top-16 w-[600px] h-[600px] bg-white border border-black rounded-lg z-50">
       <div className="flex border-b">
         <div className="flex items-center gap-1 px-1">
           <WindowControlButton char="x" handleClick={closeDialog} />

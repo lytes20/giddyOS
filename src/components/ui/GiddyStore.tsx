@@ -37,7 +37,7 @@ function GiddyStore(props: GiddyStoreProps) {
   };
 
   return (
-    <dialog open={open} className="w-[600px] h-[500px]">
+    <dialog open={open} className="w-[600px] h-[500px] rounded-lg">
       <div className="flex border-b">
         <div className="flex items-center gap-1 px-1">
           <WindowControlButton char="x" handleClick={closeDialog} />
